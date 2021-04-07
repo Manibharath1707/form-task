@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    .main
+    {
+        position: absolute;
+        left: 440px;
+        /* top: 32px; */
+        padding-top: 30px;
+        text-align: center;
+        background-color: aqua;
+        color: black;
+        border: 2px solid black;
+        border-radius: 5px;
+        width: 500PX;
+        height: 300PX;
+    }
+</style>
+</head>
+<body>
+    
+    <div class="main">
+
+            <input type="text" id="text">
+
+            <button onclick="myFunction()">Click</button>
+
+            <input type = "button" value = "Reset data" onClick = "fun()"/>
+
+            <p id="demo"></p>
+
+    </div>
+
+<script>
+            var form=document.createElement("form")
+            form.id="a";
+
+            var button = document.createElement("button");
+            button.type="button";
+            button.innerHTML="click";
+            button.addEventListener('click',myFunction1);
+            // document.body.append(button);
+
+            var button1 = document.createElement("button");
+            button1.innerHTML="reset";
+            button1.style.margin="5px";
+            button1.addEventListener('click',fun1);
+            // document.body.append(button1);
+            
+            var textarea = document.createElement("textarea");
+            textarea.style.paddingBottom="30px";
+            textarea.id="b";
+            // document.body.append(textarea);
+
+            var p0 = document.createElement("p");
+            p0.innerHTML="TOTAL-COUNT : ";
+
+            var p = document.createElement("p");
+            p.id="c";
+            // document.body.append(p);
+
+            form.append(button,button1,textarea,p0,p);
+            document.body.append(form);
+
+    function myFunction()
+    {
+        var textbox = document.getElementById("text") ;
+        var n = textbox.value.length;
+        document.getElementById("demo").innerHTML = n;
+ 
+    }
+
+    function fun()
+    {
+        document.getElementById("text").value= '';
+        document.getElementById("demo").innerHTML='';
+    } 
+
+    function myFunction1()
+    {
+        var textbox1 = document.getElementById("b") ;
+        var n1 = textbox1.value.length;
+        document.getElementById("c").innerHTML = n1;
+ 
+    }
+
+    function fun1()
+    {
+        document.getElementById("a").reset();
+        document.getElementById("c").innerHTML='';
+    } 
+
+
+</script>
+
+</body>
+</html>
+
